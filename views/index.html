@@ -1,0 +1,44 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1 id="head">
+        File Metadata Microservice
+      </h1>
+    </header>
+
+    <main>
+      <p>
+        This is an File Metadata Microservice. Use the form to upload a file (up to 30MB) and it will return its filesize in bytes as a JSON object.
+      </p>
+      <form action="/filesize" method="post" enctype="multipart/form-data">
+        Select file to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload file" name="submit">
+      </form>
+      <p>
+        <p><b>Example Output:</b></p>
+        {"size": 5295000}<br>
+      </p>
+    </main>
+
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+
+  </body>
+</html>
